@@ -4,13 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { DemoFormComponent } from './demo-form/demo-form.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DemoFormComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

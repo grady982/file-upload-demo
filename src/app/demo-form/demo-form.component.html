@@ -1,0 +1,21 @@
+<form [formGroup]="demo">
+    <div class="form-group">
+        <label for="inputEmail" class="text-light">Email Address</label>
+        <input type="email" 
+            class="form-control" 
+            id="inputEmail" 
+            placeholder="Email"
+            formControlName="email">
+    </div>
+    <div style="margin-bottom: 220px;">
+        <app-file-upload formControlName="file" (change)="detecFile($event)"></app-file-upload>
+    </div>
+    
+    <ul class="text-light border border-light mt-4" style="width: 500px;">
+        <li>File Name: <span class="ml-2">{{fileName}}</span></li>
+        <li>Extension: <span class="ml-2">{{fileExtension}}</span></li>
+        <li>Size: <span class="ml-2">{{fileSize}}</span></li>
+        <p class="text-danger" *ngIf="file.value && !demo.valid">Error: unvalid file extension</p>
+    </ul>
+    <button type="submit" class="btn btn-primary mt-2" [disabled]="!demo.valid">Submit</button>
+</form>
